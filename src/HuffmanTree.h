@@ -20,6 +20,11 @@ public:
     HuffmanTree(int frequency);
 
     /**
+     * Default constructor for a HuffmanTree.
+     */
+    HuffmanTree();
+
+    /**
      * Comparison method to compare a HuffmanTree against another HuffmanTree.
      * @param tree HuffmanTree to compare against.
      * @return an integer based on the comparison.

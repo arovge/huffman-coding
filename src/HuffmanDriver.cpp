@@ -5,11 +5,13 @@
  */
 
 #include <iostream>
-#include "HuffmanTree.h"
+#include "HuffmanLeaf.h"
+#include "HuffmanNode.h"
 
 int main() {
-    HuffmanTree tree = HuffmanTree(5);
-    std::cout << tree.getFrequency() << std::endl;
+    HuffmanLeaf leaf = HuffmanLeaf(5, 'a');
+    std::cout << "The character for this HuffmanLeaf is " << leaf.getCharacter() << "." << std::endl;
+    std::cout << "It occurs " << leaf.getFrequency() << " times." << std::endl;
 
     return 0;
 }
