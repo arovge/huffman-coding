@@ -5,9 +5,11 @@
  */
 
 #include <iostream>
+#include "HuffmanTree.h"
 
 int main() {
-    std::cout << "Hello World!" << std::endl;
+    HuffmanTree tree = HuffmanTree(5);
+    std::cout << tree.getFrequency() << std::endl;
 
     return 0;
 }
