@@ -1,0 +1,5 @@
+This is the text that will soon be encoded! Isn't that fun?? This text can only be ASCII!
+
+Here are some new lines!!
+
+Some numbers too!! 12233258656534054389597840637093425
