@@ -6,11 +6,13 @@
 
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include "HuffmanLeaf.h"
 #include "HuffmanNode.h"
 #include "HuffmanUtilities.h"
 
-void readFile();
+// helper function prototypes
+std::string readFile(std::string);
 
 int main() {
 //    HuffmanLeaf leaf = HuffmanLeaf(5, 'a');
@@ -25,30 +27,27 @@ int main() {
 //    std::cout << std::endl;
 
     // read file
-    readFile();
+    std::string str = readFile("file.in");
+
+    std::vector<int> vector = HuffmanUtilities::calculateFrequencies(str);
+
+    for (int i = 0; i < vector.size(); i++ ) {
+        std::cout << vector[i] << std::endl;
+    }
 
     return 0;
 }
 
-void readFile() {
-    std::ifstream file;
-    file.open("../src/original.txt");
+/**
+ * This is a helper method for reading in the entire user selected file.
+ * @param filename std::string of the name of the file in the root directory
+ * @return std::string of the entire file contents
+ */
+std::string readFile(std::string filename) {
 
-    std::string line;
-    HuffmanUtilities util;
-
-    if (file.is_open()) {
-        while (getline(file, line)) {
-            std::vector<int> vector = util.calculateFrequencies(line);
-
-            for (int i = 0; i < vector.size(); i++) {
-                std::cout << (char) i;
-                std::cout << " frequency is: ";
-                std:: cout << vector[i] << std::endl;
-            }
-        }
-        file.close();
-    } else {
-        std::cout << "Unable to open file" << std::endl;
-    }
+    // the buffer will return "" if the file doesn't exist so it doesn't need to be valid
+    std::ifstream file("../" + filename);
+    std::stringstream buffer;
+    buffer << file.rdbuf();
+    return buffer.str();
 }

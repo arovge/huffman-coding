@@ -13,7 +13,7 @@
 
 class HuffmanUtilities {
 public:
-    std::vector<int> calculateFrequencies(std::string input);
+    static std::vector<int> calculateFrequencies(std::string input);
 
 private:
     static const int ASCII_VALUES = 256;
