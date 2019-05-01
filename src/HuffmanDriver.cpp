@@ -22,7 +22,7 @@ int main() {
     std::vector<int> frequencies = HuffmanUtilities::calculateFrequencies(str);
 
     // build the HuffmanTree
-    HuffmanTree *tree = HuffmanUtilities::buildTree(frequencies);
+    HuffmanTree* tree = HuffmanUtilities::buildTree(frequencies);
 
     std::cout << "Tree frequency: ";
     std::cout << tree->getFrequency() << std::endl;

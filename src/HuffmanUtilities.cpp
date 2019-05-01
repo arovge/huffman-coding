@@ -8,6 +8,8 @@
 #include "HuffmanLeaf.h"
 #include "HuffmanNode.h"
 #include <queue>
+#include <string>
+#include <unordered_map>
 
 /**
  * This method loops through a string and increments the character frequency
@@ -64,4 +66,17 @@ HuffmanTree* HuffmanUtilities::buildTree(std::vector<int> frequencies) {
 
     // return the constructed HuffmanTree
     return queue.top();
+}
+
+void HuffmanUtilities::printCodes(HuffmanTree* tree) {
+
+}
+
+void HuffmanUtilities::buildTable(HuffmanTree* tree, std::string str) {
+
+}
+
+void HuffmanUtilities::processLeaf(HuffmanLeaf leaf, std::string str) {
+    std::pair<char, std::string> pair(leaf.getCharacter(), str);
+    HuffmanUtilities::map.insert(pair);
 }
