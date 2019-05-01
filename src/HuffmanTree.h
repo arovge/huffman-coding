@@ -29,13 +29,19 @@ public:
      * @param tree HuffmanTree to compare against.
      * @return an integer based on the comparison.
      */
-    int compareTo(HuffmanTree tree);
+    int compareTo(HuffmanTree* tree);
 
     /**
      * A getter method for the frequency of the HuffmanTree.
      * @return an integer for the frequency of the HuffmanTree.
      */
     int getFrequency();
+
+    /**
+     * Used to determine if the object is a leaf or a node.
+     * @return true if a leaf, false if a node
+     */
+    virtual bool isLeaf() = 0;
 
 protected:
     /** This is the frequency of the character for the HuffmanTree. */

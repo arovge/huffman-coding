@@ -22,6 +22,12 @@ public:
      */
     HuffmanNode(HuffmanTree* left, HuffmanTree* right);
 
+    /**
+     * Used to determine if the object is a leaf or a node.
+     * @return true if a leaf, false if a node
+     */
+    virtual bool isLeaf();
+
 private:
 
     /** This is a reference to the left subtree. It is either a HuffmanLeaf or HuffmanNode. */

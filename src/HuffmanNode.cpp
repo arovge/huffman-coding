@@ -16,3 +16,11 @@ HuffmanNode::HuffmanNode(HuffmanTree* left, HuffmanTree* right) : HuffmanTree(le
     this->left = left;
     this->right = right;
 }
+
+/**
+ * Used to determine if the object is a leaf or a node.
+ * @return true if a leaf, false if a node
+ */
+bool HuffmanNode::isLeaf() {
+    return false;
+}

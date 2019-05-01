@@ -24,3 +24,11 @@ HuffmanLeaf::HuffmanLeaf(int frequency, char value) : HuffmanTree(frequency), va
 char HuffmanLeaf::getCharacter() {
     return this->value;
 }
+
+/**
+ * Used to determine if the object is a leaf or a node.
+ * @return true if a leaf, false if a node
+ */
+bool HuffmanLeaf::isLeaf() {
+    return true;
+}

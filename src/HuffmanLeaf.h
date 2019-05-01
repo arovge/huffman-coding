@@ -30,6 +30,12 @@ public:
      */
     char getCharacter();
 
+    /**
+     * Used to determine if the object is a leaf or a node.
+     * @return true if a leaf, false if a node
+     */
+    virtual bool isLeaf();
+
 private:
 
     /** This is the character value for the HuffmanLeaf. Unique to each HuffmanLeaf. */

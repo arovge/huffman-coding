@@ -27,8 +27,8 @@ HuffmanTree::HuffmanTree() : HuffmanTree(0) {}
  *              tree has the larger frequency, or a negative integer if the other tree
  *              has the larger frequency.
  */
-int HuffmanTree::compareTo(HuffmanTree tree) {
-    return this->frequency - tree.getFrequency();
+int HuffmanTree::compareTo(HuffmanTree* tree) {
+    return this->frequency - tree->getFrequency();
 }
 
 /**
