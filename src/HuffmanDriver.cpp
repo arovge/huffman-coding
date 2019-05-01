@@ -4,36 +4,28 @@
  * Date: 2/10/2019
  */
 
-#include <iostream>
-#include <fstream>
-#include <sstream>
 #include "HuffmanLeaf.h"
 #include "HuffmanNode.h"
 #include "HuffmanUtilities.h"
+#include <iostream>
+#include <fstream>
+#include <sstream>
 
 // helper function prototypes
 std::string readFile(std::string);
 
 int main() {
-//    HuffmanLeaf leaf = HuffmanLeaf(5, 'a');
-//    std::cout << "The character for this HuffmanLeaf is: " << leaf.getCharacter() << std::endl;
-//    std::cout << "Its frequency is: " << leaf.getFrequency() << std::endl;
-//
-//    HuffmanNode node = HuffmanNode(leaf, HuffmanNode(HuffmanLeaf(3, 'a'), HuffmanLeaf(25, 'b')));
-
-    // expected 33 = 3 + 5 + 25
-//    std::cout << "The frequency for this HuffmanNode is: " << node.getFrequency() << std::endl;
-
-//    std::cout << std::endl;
-
     // read file
     std::string str = readFile("file.in");
 
-    std::vector<int> vector = HuffmanUtilities::calculateFrequencies(str);
+    // get character frequencies for the entire file
+    std::vector<int> frequencies = HuffmanUtilities::calculateFrequencies(str);
 
-    for (int i = 0; i < vector.size(); i++ ) {
-        std::cout << vector[i] << std::endl;
-    }
+    // build the HuffmanTree
+    HuffmanTree *tree = HuffmanUtilities::buildTree(frequencies);
+
+    std::cout << "Tree frequency: ";
+    std::cout << tree->getFrequency() << std::endl;
 
     return 0;
 }

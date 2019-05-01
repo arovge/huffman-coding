@@ -5,6 +5,7 @@
  */
 
 #include "HuffmanLeaf.h"
+#include <iostream>
 
 /**
  * This is a constructor for a HuffmanLeaf. It passes its frequency into
@@ -12,8 +13,8 @@
  * @param frequency the frequency the character value occurs.
  * @param value the character value of this HuffmanLeaf.
  */
-HuffmanLeaf::HuffmanLeaf(int frequency, char value) : HuffmanTree(frequency) {
-    this->value = value;
+HuffmanLeaf::HuffmanLeaf(int frequency, char value) : HuffmanTree(frequency), value{value} {
+
 }
 
 /**

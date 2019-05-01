@@ -37,9 +37,11 @@ public:
      */
     int getFrequency();
 
-private:
+protected:
     /** This is the frequency of the character for the HuffmanTree. */
     int frequency;
 };
+
+
 
 #endif // HUFFMAN_CODING_HUFFMANTREE_H

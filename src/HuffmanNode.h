@@ -20,15 +20,15 @@ public:
      * @param left HuffmanTree object, either a leaf or a node, on the left subtree.
      * @param right HuffmanTree object, either a leaf or a node, on the right subtree.
      */
-    HuffmanNode(HuffmanTree left, HuffmanTree right);
+    HuffmanNode(HuffmanTree* left, HuffmanTree* right);
 
 private:
 
     /** This is a reference to the left subtree. It is either a HuffmanLeaf or HuffmanNode. */
-    HuffmanTree left;
+    HuffmanTree* left;
 
     /** This is a reference to the right subtree. It is either a HuffmanLeaf or HuffmanNode. */
-    HuffmanTree right;
+    HuffmanTree* right;
 };
 
 
