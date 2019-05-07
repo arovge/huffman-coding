@@ -28,6 +28,10 @@ public:
      */
     virtual bool isLeaf();
 
+    HuffmanTree* getLeftTree();
+
+    HuffmanTree* getRightTree();
+
 private:
 
     /** This is a reference to the left subtree. It is either a HuffmanLeaf or HuffmanNode. */

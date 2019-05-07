@@ -24,3 +24,11 @@ HuffmanNode::HuffmanNode(HuffmanTree* left, HuffmanTree* right) : HuffmanTree(le
 bool HuffmanNode::isLeaf() {
     return false;
 }
+
+HuffmanTree* HuffmanNode::getLeftTree() {
+    return this->left;
+}
+
+HuffmanTree* HuffmanNode::getRightTree(){
+    return this->right;
+}

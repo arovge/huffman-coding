@@ -69,14 +69,27 @@ HuffmanTree* HuffmanUtilities::buildTree(std::vector<int> frequencies) {
 }
 
 void HuffmanUtilities::printCodes(HuffmanTree* tree) {
-
+    HuffmanUtilities::inorderTraversal(tree, "");
 }
 
-void HuffmanUtilities::buildTable(HuffmanTree* tree, std::string str) {
+void HuffmanUtilities::inorderTraversal(HuffmanTree* tree, std::string str) {
+    if (!tree->isLeaf()) {
+        // HuffmanNode
+        if (((HuffmanNode*) tree)->getLeftTree() != nullptr) {
+            HuffmanUtilities::inorderTraversal(((HuffmanNode*) tree)->getLeftTree(), str + '0');
+        }
 
+        if (((HuffmanNode*) tree)->getRightTree() != nullptr) {
+            HuffmanUtilities::inorderTraversal(((HuffmanNode*) tree)->getRightTree(), str + '1');
+        }
+    } else {
+        // HuffmanLeaf
+        HuffmanLeaf* leaf = ((HuffmanLeaf*) tree);
+        HuffmanUtilities::processLeaf(leaf, str);
+    }
 }
 
-void HuffmanUtilities::processLeaf(HuffmanLeaf leaf, std::string str) {
-    std::pair<char, std::string> pair(leaf.getCharacter(), str);
+void HuffmanUtilities::processLeaf(HuffmanLeaf* leaf, std::string str) {
+    std::pair<char, std::string> pair(leaf->getCharacter(), str);
     HuffmanUtilities::map.insert(pair);
 }
